@@ -6,7 +6,7 @@ const main = document.querySelector('main')
 
 const app = {
   init: function() {
-   return {model: 100, effect: 'INIT'} 
+   return {model: 39, effect: 'INIT'} 
   },
   update: function(model, action) {
    if(model == 0) return {model: model}
