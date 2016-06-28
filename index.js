@@ -20,14 +20,20 @@ const app = {
     return heart(model, dispatch) 
   },
   run: function(effect, sources) {
+    function emitTickWaxPoetic(p) {
+      p.push('TICK')
+      console.log(letter.letter.shift())
+    }
     switch(effect){
       case 'INIT':
         const p = push()
-        setInterval(() => {
-          p.push('TICK')
-           console.log(letter.letter.pop())
-        }
-        , 3000)
+        setInterval(
+          ()=> emitTickWaxPoetic(p)
+          , 3000)
+        document.addEventListener('click', (e)=> {
+          e.preventDefault()
+          emitTickWaxPoetic(p)
+        })
         return p
     } 
   }
